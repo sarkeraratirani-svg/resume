@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>I Love U Mahi ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+overflow:hidden;
+background:linear-gradient(135deg,#ffd6e7,#ffc2d1);
+}
+
+.page{
+width:100%;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.active{
+display:flex;
+}
+
+.pass-box{
+
+width:90%;
+max-width:900px;
+
+background:white;
+
+padding:30px;
+
+border-radius:30px;
+
+display:flex;
+
+gap:30px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.2);
+
+}
+
+.left{
+
+flex:1;
+
+}
+
+.left img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+border-radius:25px;
+
+}
+
+.right{
+
+flex:1;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.right h1{
+
+color:#ff4d8d;
+
+margin-bottom:30px;
+
+}
+
+#display{
+
+width:180px;
+
+height:60px;
+
+background:#ffe6ef;
+
+border-radius:20px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:30px;
+
+letter-spacing:10px;
+
+margin-bottom:20px;
+
+}
+
+.keypad{
+
+display:grid;
+
+grid-template-columns:repeat(3,80px);
+
+gap:15px;
+
+}
+
+.keypad button{
+
+height:70px;
+
+border:none;
+
+background:#ff5c97;
+
+color:white;
+
+font-size:25px;
+
+border-radius:20px;
+
+cursor:pointer;
+
+}
+
+.birthday-card{
+
+background:white;
+
+padding:50px;
+
+border-radius:30px;
+
+text-align:center;
+
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+
+}
+
+.birthday-card h1{
+
+font-size:50px;
+
+color:#ff4d8d;
+
+}
+
+.birthday-card h2{
+
+color:#ff77a9;
+
+margin-top:15px;
+
+}
+
+.next-btn{
+
+margin-top:30px;
+
+padding:18px 40px;
+
+border:none;
+
+background:#ff4d8d;
+
+color:white;
+
+border-radius:20px;
+
+font-size:20px;
+
+cursor:pointer;
+
+}
+
+.gift-title{
+
+font-size:50px;
+
+color:white;
+
+margin-bottom:40px;
+
+}
+
+.gifts{
+
+display:flex;
+
+gap:30px;
+
+}
+
+.gift img{
+
+width:170px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.gift img:hover{
+
+transform:translateY(-10px);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- PASS PAGE -->
+
+<div class="page active" id="page1">
+
+<div class="pass-box">
+
+<div class="left">
+
+<img src="https://images.mid-day.com/images/images/2014/jan/21-aashiqui-2.jpg">
+
+</div>
+
+<div class="right">
+
+<h1>Enter Passcode ❤️</h1>
+
+<div id="display">
+••••
+</div>
+
+<div class="keypad">
+
+<button onclick="addNum(1)">1</button>
+<button onclick="addNum(2)">2</button>
+<button onclick="addNum(3)">3</button>
+
+<button onclick="addNum(4)">4</button>
+<button onclick="addNum(5)">5</button>
+<button onclick="addNum(6)">6</button>
+
+<button onclick="addNum(7)">7</button>
+<button onclick="addNum(8)">8</button>
+<button onclick="addNum(9)">9</button>
+
+<button onclick="clearPass()">C</button>
+<button onclick="addNum(0)">0</button>
+<button onclick="checkPass()">✓</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BIRTHDAY PAGE -->
+
+<div class="page" id="page2">
+
+<div class="birthday-card">
+
+<h1>I OWE U AN APOLOGIES</h1>
+
+<h2>I Love U Mahi ❤️</h2>
+
+<p style="margin-top:20px">
+Is bar ke liye maf krdo malkin
+</p>
+
+<button class="next-btn"
+onclick="showPage('page3')">
+
+NEXT 🎁
+
+</button>
+
+</div>
+
+</div>
+
+<!-- GIFT PAGE -->
+
+<div class="page" id="page3">
+
+<h1 class="gift-title">
+<br>
+
+<img
+
+src="https://media1.tenor.com/m/RyGygfZq-6cAAAAC/love.gif"
+
+style="
+
+width:220px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+"><br>
+
+Gift For You 🎁
+
+</h1>
+
+<div class="gifts">
+
+<div class="gift">
+
+<img
+onclick="showPage('gift1')"
+src="https://cdn-icons-png.flaticon.com/512/2583/2583344.png">
+
+</div>
+
+<div class="gift">
+
+<img
+onclick="showPage('gift2')"
+src="https://cdn-icons-png.flaticon.com/512/2583/2583344.png">
+
+</div>
+
+<div class="gift">
+
+<img
+onclick="giftThree()"
+src="https://cdn-icons-png.flaticon.com/512/2583/2583344.png">
+
+</div>
+
+</div>
+
+</div>
+<!-- GIFT 1 -->
+
+
+<div class="page" id="gift1">
+
+<div class="birthday-card">
+
+<h15>CAKE FOR YOU,SWEETHEART ❤️I HOPE U CAN FORGIVE ME!</h15>
+<br>
+
+<img
+
+src="https://c.tenor.com/cJrT76-ap78AAAAC/hugs-gif.gif"
+
+style="
+
+width:184px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+">
+
+<br>
+
+<div
+id="cake"
+style="font-size:100px;">
+
+🎂
+
+</div>
+
+<br>
+
+<button
+class="next-btn"
+onclick="blowCake()">
+
+BLOW 🕯️
+
+</button>
+
+<br><br>
+
+<button
+class="next-btn"
+onclick="showPage('page3')">
+
+BACK 🎁
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- GIFT 2 -->
+
+<div class="page" id="gift2">
+
+<div
+class="birthday-card"
+style="max-width:700px;">
+
+<h1>
+
+💖 A big virtual hug for u , Moni 💖
+
+</h1>
+
+<br>
+
+<img
+
+src="https://media.tenor.com/vhxp8VLoMOwAAAAC/hug-love.gif"
+
+style="
+
+width:250px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+">
+
+<br><br>
+
+<p
+style="
+
+font-size:20px;
+
+line-height:35px;
+
+color:#555;
+
+">
+
+You are the most beautiful part
+of my life. U matter,and i care about u.I'm here for u.
+
+
+I Love You ❤️
+
+</p>
+
+<br>
+
+<button
+class="next-btn"
+onclick="showPage('page3')">
+
+BACK 🎁
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- GIFT 3 -->
+
+<div
+class="page"
+id="gift3"
+
+style="
+
+background:black;
+
+position:relative;
+
+overflow:hidden;
+
+">
+
+<div id="rainBox">
+
+</div>
+
+<h1
+
+id="countText"
+
+style="
+
+display:none;
+
+font-size:180px;
+
+color:pink;
+
+text-shadow:0 0 40px hotpink;
+
+z-index:10;
+
+">
+
+3
+
+</h1>
+
+</div>
+
+
+<style>
+
+#rainBox{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+}
+
+.loveRain{
+
+position:absolute;
+
+color:#ff69b4;
+
+font-size:20px;
+
+text-shadow:0 0 20px pink;
+
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:
+translateY(-100px);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(120vh);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+<!-- FINAL LOVE PAGE -->
+
+<div class="page" id="finalPage" style="background:black;">
+
+<h1
+id="wordAnimation"
+style="
+display:none;
+font-size:90px;
+color:#ff69b4;
+text-shadow:0 0 30px hotpink;
+">
+
+YOU
+
+</h1>
+
+<h1
+id="finalLoveText"
+style="
+display:none;
+font-size:60px;
+color:pink;
+text-shadow:0 0 40px hotpink;
+text-align:center;
+">
+
+❤️<br>
+I Love U Mahi
+
+</h1>
+
+<button
+id="backButton"
+class="next-btn"
+style="
+display:none;
+margin-top:40px;
+"
+onclick="showPage('page3')">
+
+BACK 🎁
+
+</button>
+
+<audio
+id="bgMusic"
+loop>
+
+<source
+src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3"
+type="audio/mp3">
+
+</audio>
+
+</div>
+
+
+<script>
+
+let password="";
+
+function addNum(num){
+
+if(password.length<4){
+
+password+=num;
+
+document.getElementById("display")
+.innerHTML=
+"•".repeat(password.length);
+
+}
+
+}
+
+function clearPass(){
+
+password="";
+
+document.getElementById("display")
+.innerHTML="••••";
+
+}
+
+function checkPass(){
+
+if(password==="1018"){
+
+showPage("page2");
+
+}
+
+else{
+
+alert("Wrong Passcode ❤️");
+
+clearPass();
+
+}
+
+}
+
+function showPage(id){
+
+document.querySelectorAll(".page")
+.forEach(page=>{
+
+page.classList.remove("active");
+
+});
+
+document
+.getElementById(id)
+.classList.add("active");
+
+}
+
+function blowCake(){
+
+document
+.getElementById("cake")
+.innerHTML="🎂✨";
+
+setTimeout(()=>{
+
+alert("Make A Wish ❤️");
+
+},500);
+
+}
+
+function giftThree(){
+
+showPage("gift3");
+
+startRain();
+
+setTimeout(()=>{
+
+countDown();
+
+},5000);
+
+}
+
+function startRain(){
+
+const box=
+document.getElementById("rainBox");
+
+box.innerHTML="";
+
+for(let i=0;i<80;i++){
+
+let love=
+document.createElement("div");
+
+love.className=
+"loveRain";
+
+love.innerHTML=
+"LOVE U";
+
+love.style.left=
+Math.random()*100+"%";
+
+love.style.fontSize=
+15+Math.random()*25+"px";
+
+love.style.animationDuration=
+3+Math.random()*4+"s";
+
+box.appendChild(love);
+
+}
+
+}
+
+function countDown(){
+
+let count=
+document.getElementById("countText");
+
+count.style.display=
+"block";
+
+let number=3;
+
+count.innerHTML=number;
+
+let timer=
+
+setInterval(()=>{
+
+number--;
+
+if(number===0){
+
+clearInterval(timer);
+
+count.style.display=
+"none";
+
+showWords();
+
+return;
+
+}
+
+count.innerHTML=
+number;
+
+},1000);
+
+}
+
+function showWords(){
+
+showPage("finalPage");
+
+document
+.getElementById("bgMusic")
+.play();
+
+let words=[
+
+"YOU",
+"ARE",
+"MY",
+"LOVE",
+"LOVE"
+
+];
+
+let index=0;
+
+let text=
+document.getElementById("wordAnimation");
+
+text.style.display=
+"block";
+
+let wordTimer=
+
+setInterval(()=>{
+
+text.innerHTML=
+words[index];
+
+index++;
+
+if(index>=words.length){
+
+clearInterval(wordTimer);
+
+text.style.display=
+"none";
+
+showFinalLove();
+
+}
+
+},2000);
+
+}
+
+function showFinalLove(){
+
+document
+.getElementById("finalLoveText")
+.style.display=
+"block";
+
+document
+.getElementById("backButton")
+.style.display=
+"inline-block";
+
+}
+
+</script>
+
+</body>
+</html>
